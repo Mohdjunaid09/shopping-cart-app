@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+</head>
+<body>
+
+<h2>Your Cart</h2>
+<ul id="cartItems"></ul>
+
+<script src="js/script.js"></script>
+<script>
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let list = document.getElementById("cartItems");
+
+  cart.forEach(item => {
+    let li = document.createElement("li");
+    li.textContent = item;
+    list.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
